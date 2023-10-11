@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, black, white, red, pink,   transparent);
+    font-family: autour;
+    font-family: 'Tilt Neon', sans-serif;
+}
+
+.container{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.bubbles{
+    position: relative;
+    display: flex;
+    z-index: -100;
+    
+}
+
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44, 0 0 50px #4fc3dc, 0 0 100px #4fc3dc;
+    animation: stars 15s linear infinite;
+    animation-duration: calc(50s/ var(--i));
+}
+
+.bubbles span:nth-child(even){
+    background: #ff2d75;
+    box-shadow: 0 0 0 10px #ff2d7544, 0 0 50px #ff2d75, 0 0 100px #ff2d75;
+}
+
+@keyframes stars {
+    0%{
+        transform: translateY(100vh) scale(0);
+    }
+
+    100%{
+        transform: translateY(-10vh) scale(1);
+    }
+}
+
+.heading{
+    text-align: center;
+    position: relative;
+    top: 6%;
+    font-size: 2.4rem;
+    color : black;
+    text-shadow: 0 0 13px red, 0 0 5px blue, 0 0 3px yellow;
+}
+
+
+.mediaContainer{
+    width: 75%;
+    height: 540px;
+    position: absolute;
+    margin-left: 12%;
+    top: 16%;
+    display: flex;
+    flex-wrap: wrap;
+    box-shadow: 0 0 40px white;
+    padding: 40px;
+    border-radius: 17px;
+    overflow-y: scroll;
+}
+
+
+.vidDiv{
+    width: 33.3%;
+    height: 50%;
+    padding: 14px;
+    border-radius: 31px;
+    background: linear-gradient(102deg, pink, blue, violet, transparent);
+    opacity: 0.7;
+}
+
+.vidDiv:hover{
+    opacity: 1;
+}
+
+.vidDiv iframe{
+    width: 100%;
+    height: 100%;
+    border-radius: 31px;
+    transition: all ease-in-out 0.1s;
+}
+
+.vidDiv iframe:hover{
+    transform: scale(1.1);
+}
+
